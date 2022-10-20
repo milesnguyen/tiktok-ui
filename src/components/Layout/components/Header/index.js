@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import 'tippy.js/dist/tippy.css'; // optional
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 
+import Button from 'src/components/Button';
 import { Wrapper as PopperWrapper } from 'src/components/Popper';
 import styles from './Header.module.scss';
 import images from 'src/assets/images';
@@ -54,7 +55,12 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Button upload>
+                        <FontAwesomeIcon icon={faPlus} /> Tải lên
+                    </Button>
+                    <Button primary>Đăng nhập</Button>
+                </div>
             </div>
         </header>
     );
