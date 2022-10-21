@@ -35,7 +35,7 @@ const MENU_ITEMS = [
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
-        title: 'Phìm tắt trên bàn phím',
+        title: 'Phím tắt trên bàn phím',
     },
 ];
 
