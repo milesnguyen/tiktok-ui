@@ -14,10 +14,37 @@
     text-align: left;
     padding: 9px 8px 9px 14px;
     border-radius: 0;
-
     display: block;
+
+    + .separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
 
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);
     }
+}
+
+//HEADER MENU
+
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+}
+.back-btn {
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0px var(--default-layout-horizontal-spacer);
 }
 
 .search,
@@ -89,6 +90,25 @@
         background-color: rgba(22, 24, 35, 0.06);
     }
 }
+// ACTIONS
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+.action-btn {
+    fill: #161823;
+    cursor: pointer;
+    margin: 0 12px;
+}
+.user-avt {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 12px;
+    cursor: pointer;
+}
 
 .more-btn {
     font-size: 2rem;
@@ -96,4 +116,5 @@
     line-height: 22px;
     margin-left: 16px;
     background-color: transparent;
+    cursor: pointer;
 }
