@@ -5,10 +5,6 @@ import {
     faMagnifyingGlass,
     faPlus,
     faEllipsisVertical,
-    faLanguage,
-    faKeyboard,
-    faGear,
-    faArrowRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import 'tippy.js/dist/tippy.css'; // optional
@@ -22,13 +18,26 @@ import styles from './Header.module.scss';
 import images from 'src/assets/images';
 import AccountItem from 'src/components/AccountItem';
 import Menu from 'src/components/Popper/Menu';
-import { faQuestionCircle, faUser } from '@fortawesome/free-regular-svg-icons';
+import Image from 'src/components/Image';
+
+import {
+    BoxIcon,
+    CoinIcon,
+    LiveIcon,
+    MessIcon,
+    UserIcon,
+    SettingIcon,
+    HelpIcon,
+    KeyboardIcon,
+    LangIcon,
+    LogoutIcon,
+} from 'src/components/Icons';
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faLanguage} />,
+        icon: <LangIcon />,
         title: 'Tiếng Việt',
         children: {
             title: 'Tiếng Việt',
@@ -52,12 +61,12 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <FontAwesomeIcon icon={faQuestionCircle} />,
+        icon: <HelpIcon />,
         title: 'Phản hồi và trợ giúp',
         to: '/feedback',
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        icon: <KeyboardIcon />,
         title: 'Phím tắt trên bàn phím',
     },
 ];
@@ -83,30 +92,30 @@ function Header() {
 
     const userMenu = [
         {
-            icon: <FontAwesomeIcon icon={faUser} />,
+            icon: <UserIcon />,
             title: 'Xem hồ sơ',
             to: '/@milesnguyen',
         },
         {
-            icon: <img src={images.coin} alt="coin" />,
+            icon: <CoinIcon />,
             title: 'Nhận xu',
             to: '/coin',
         },
         {
-            icon: <img src={images.live} alt="live" />,
+            icon: <LiveIcon />,
             title: 'LIVE Studio',
             to: '/live',
         },
         {
-            icon: <FontAwesomeIcon icon={faGear} />,
+            icon: <SettingIcon />,
             title: 'Cài đặt',
             to: '/settings',
         },
         ...MENU_ITEMS,
         {
-            icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
+            icon: <LogoutIcon />,
             title: 'Đăng xuất',
-            to: '/settings',
+            to: '/logout',
             separate: true,
         },
     ];
@@ -152,14 +161,14 @@ function Header() {
                                 <FontAwesomeIcon icon={faPlus} /> Tải lên
                             </Button>
                             <Tippy content="Tin nhắn" placement="bottom">
-                                <span className={cx('action-btn')}>
-                                    <img src={images.plane} alt="plane" />
-                                </span>
+                                <button className={cx('action-btn')}>
+                                    <MessIcon />
+                                </button>
                             </Tippy>
                             <Tippy placement="bottom" content="Hộp thư">
-                                <span className={cx('action-btn')}>
-                                    <img src={images.mess} alt="mess" />
-                                </span>
+                                <button className={cx('action-btn')}>
+                                    <BoxIcon />
+                                </button>
                             </Tippy>
                         </>
                     ) : (
@@ -172,7 +181,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avt')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/f5671e0b7becfcbe7d91edffac1e931b~c5_720x720.jpeg?x-expires=1666573200&x-signature=NZ5s%2Fi%2BlTElDQS0mziI22YBzYbY%3D"
                             />

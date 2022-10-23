@@ -1,6 +1,9 @@
 .wrapper {
+    display: flex;
+    align-items: center;
     font-size: 1.6rem;
     font-weight: 700;
+    font-family: ibm-plex-sans, sans-serif;
     min-width: 100px;
     line-height: 22px;
     padding: 6px 16px;
