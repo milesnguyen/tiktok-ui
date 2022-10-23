@@ -10,7 +10,7 @@ import Profile from 'src/pages/Profile';
 const publicRoutes = [
     { path: '/', compoment: Home },
     { path: '/following', compoment: Following },
-    { path: '/profile', compoment: Profile },
+    { path: '/@:nickname', compoment: Profile },
     { path: '/upload', compoment: Upload, layout: HeaderOnly },
     { path: '/search', compoment: Search, layout: null },
 ];

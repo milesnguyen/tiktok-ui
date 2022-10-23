@@ -1,37 +1,28 @@
+import { faEllipsisVertical, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
-    faPlus,
-    faEllipsisVertical,
-} from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
-import 'tippy.js/dist/tippy.css'; // optional
-import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/';
-import HeadlessTippy from '@tippyjs/react/headless';
+import classNames from 'classnames/bind';
+import 'tippy.js/dist/tippy.css'; // optional
 
-import Button from 'src/components/Button';
-import { Wrapper as PopperWrapper } from 'src/components/Popper';
-import styles from './Header.module.scss';
 import images from 'src/assets/images';
-import AccountItem from 'src/components/AccountItem';
-import Menu from 'src/components/Popper/Menu';
+import Button from 'src/components/Button';
 import Image from 'src/components/Image';
+import Menu from 'src/components/Popper/Menu';
+import styles from './Header.module.scss';
 
 import {
     BoxIcon,
     CoinIcon,
-    LiveIcon,
-    MessIcon,
-    UserIcon,
-    SettingIcon,
     HelpIcon,
     KeyboardIcon,
     LangIcon,
+    LiveIcon,
     LogoutIcon,
+    MessIcon,
+    SettingIcon,
+    UserIcon,
 } from 'src/components/Icons';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 
@@ -72,14 +63,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
     const currentUser = true;
-
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 1000);
-    }, []);
 
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -126,33 +110,9 @@ function Header() {
                 <div className={cx('logo')}>
                     <img src={images.logo} alt="tiktok" />
                 </div>
-                <HeadlessTippy
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Tài khoản</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input placeholder="Tìm kiếm tài khoản và video" spellCheck={false} />
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </HeadlessTippy>
+                {/* SEARCH */}
+                <Search />
 
                 <div className={cx('actions')}>
                     {currentUser ? (
