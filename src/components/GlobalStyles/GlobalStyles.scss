@@ -7,7 +7,7 @@
     --text-color: #161823;
     --white: #fff;
     // default layout
-
+    --font: ibm-plex-sans, sans-serif;
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    font-family: ibm-plex-sans, sans-serif;
+    font-family: var(--font);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;
