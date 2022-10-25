@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from 'src/routes';
-import { Defaulayout } from 'src/components/Layout';
+import { Defaulayout } from 'src/layouts';
 import { Fragment } from 'react';
 
 function App() {
