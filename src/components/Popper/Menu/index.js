@@ -5,6 +5,7 @@ import Header from './Header';
 import { Wrapper as PopperWrapper } from 'src/components/Popper';
 import MenuItem from './MenuItem';
 import { useState } from 'react';
+import 'tippy.js/dist/svg-arrow.css';
 
 const cx = classNames.bind(styles);
 
@@ -40,7 +41,6 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             delay={[0, 700]}
             offset={[14, 8]}
             hideOnClick={hideOnClick}
-            arrow={true}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
@@ -53,7 +53,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-scroll')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}

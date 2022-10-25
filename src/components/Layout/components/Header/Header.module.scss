@@ -5,7 +5,12 @@
     --search-btn-width: 52px;
 
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     height: var(--default-layout-header-height);
+    background-color: var(--white);
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
     display: flex;
     justify-content: center;
