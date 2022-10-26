@@ -32,7 +32,7 @@ const MENU_ITEMS = [
         icon: <LangIcon />,
         title: 'Tiếng Việt',
         children: {
-            title: 'Tiếng Việt',
+            title: 'Ngôn Ngữ',
             data: [
                 {
                     type: 'language',
