@@ -10,6 +10,8 @@ import {
     UsergrSolidIcon,
     LiveCamSolidIcon,
 } from 'src/components/Icons';
+import SuggestAccount from 'src/components/SuggestAccount';
+import { suggest } from 'src/services/suggestServices';
 
 const cx = classNames.bind(styles);
 
@@ -36,6 +38,8 @@ function Sidebar() {
                     activeIcon={<LiveCamSolidIcon />}
                 />
             </Menu>
+            <SuggestAccount label="Tài khoản được đề xuất" />
+            <SuggestAccount label="Các tài khoản đang follow" />
         </aside>
     );
 }

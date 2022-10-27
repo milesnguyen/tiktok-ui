@@ -44,6 +44,8 @@
     background-color: var(--primary);
     color: var(--white);
     padding: 6px 8px;
+    display: flex;
+    justify-content: center;
     &:hover {
         border-color: var(--primary);
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
