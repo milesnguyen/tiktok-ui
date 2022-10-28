@@ -1,0 +1,87 @@
+.wrapper {
+    padding: 20px 0;
+    display: flex;
+    position: relative;
+    border-bottom: 0.5px solid #1618231f;
+}
+.container {
+    margin-left: 12px;
+}
+.head {
+}
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+.info {
+}
+.user {
+    display: flex;
+    line-height: 2.5rem;
+}
+.nickname {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-right: 4px;
+}
+.name {
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+.description {
+    font-size: 1.6rem;
+}
+.text {
+}
+.hastag {
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    strong {
+        margin: 0 2px;
+    }
+}
+.icon {
+    margin-right: 5px;
+}
+.audio {
+    margin: 4px 0 12px 0;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 700;
+}
+.body {
+    width: 100%;
+    height: 100%;
+}
+.item {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+}
+.play-video {
+    width: 100%;
+    height: calc(450px + (100vw - 768px) / 1152 * 100);
+    margin-right: 20px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.react-icon {
+    font-size: 2.4rem;
+}
+.item-react {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.count {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    color: #161823bf;
+    font-weight: 700;
+}
+.btn {
+    position: absolute;
+    left: 664px;
+}

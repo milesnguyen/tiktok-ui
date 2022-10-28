@@ -1,6 +1,6 @@
 .wrapper {
     border-top: 0.5px solid #1618231f;
-    padding: 16px 0;
+    padding-top: 16px;
 }
 .label {
     font-size: 1.4rem;
@@ -45,13 +45,4 @@
     font-size: 1.2rem;
     line-height: 15px;
     color: #161823bf;
-}
-.more-btn {
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    margin-top: 8px;
-    padding: 0px 8px;
-    cursor: pointer;
 }

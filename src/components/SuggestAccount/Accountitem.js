@@ -9,6 +9,7 @@ import Tippy from '@tippyjs/react/headless';
 import Image from '../Image';
 import AccountPreview from './AccountPreview/AccountPreview';
 import styles from './SuggestAccounts.module.scss';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +18,7 @@ function Accountitem({ data }) {
         return (
             <div tabIndex="-1" {...props}>
                 <PopperWrapper>
-                    <AccountPreview />
+                    <AccountPreview data={data} />
                 </PopperWrapper>
             </div>
         );
@@ -27,17 +28,13 @@ function Accountitem({ data }) {
         <div>
             <Tippy interactive delay={[800, 0]} render={renderPreview} placement="bottom">
                 <div className={cx('account-item')}>
-                    <Image
-                        className={cx('avatar')}
-                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/65d3c6b1d1e205c75536ccf1f26d552d~c5_100x100.jpeg?x-expires=1667005200&x-signature=96th1mAEz8N8%2Bqe4ijWinOhreSE%3D"
-                        alt=""
-                    />
+                    <Image className={cx('avatar')} src={data.avatar} alt={data.nickname} />
                     <div className={cx('item-info')}>
                         <p className={cx('nickname')}>
-                            <strong>theanh28entertainment</strong>
-                            <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                            <strong>{data.nickname}</strong>
+                            {data.tick && <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />}
                         </p>
-                        <p className={cx('name')}></p>
+                        <p className={cx('name')}>{`${data.first_name} ${data.last_name}`}</p>
                     </div>
                 </div>
             </Tippy>

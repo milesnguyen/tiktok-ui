@@ -1,5 +1,6 @@
 @import 'normalize.css';
-@import url('https://use.typekit.net/nko5fvg.css');
+// @import url('https://use.typekit.net/nko5fvg.css');
+@import '@fontsource/ibm-plex-sans'; // Defaults to weight 400.
 
 :root {
     --primary: #fe2c55;
@@ -7,11 +8,12 @@
     --text-color: #161823;
     --white: #fff;
     // default layout
-    --font: ibm-plex-sans, sans-serif;
+    --font: IBM Plex Sans;
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
 }
+
 * {
     margin: 0;
     padding: 0;

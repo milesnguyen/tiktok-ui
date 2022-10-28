@@ -68,6 +68,16 @@
     border-color: rgba(22, 24, 35, 0.12);
     box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
 }
+.circle {
+    display: flex;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0;
+    background-color: #1618230f;
+    border-radius: 50%;
+    margin: 8px 0 6px 0;
+}
 // size button
 
 .small {
