@@ -54,6 +54,8 @@
 .outline {
     color: var(--primary);
     border-color: currentColor;
+    display: flex;
+    justify-content: center;
 
     &:hover {
         border-color: currentColor;

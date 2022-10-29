@@ -1,0 +1,41 @@
+.wrapper {
+    padding: 8px 0;
+    max-width: 290px;
+    max-height: 432px;
+    overflow: auto;
+}
+.item {
+    width: 280px;
+    padding: 12px;
+    display: flex;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+.icon {
+    font-size: 2.6rem;
+}
+.text {
+    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 2.2rem;
+    margin-left: 12px;
+}
+.more-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    width: 100%;
+    padding: 0px 16px;
+    background-color: transparent;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

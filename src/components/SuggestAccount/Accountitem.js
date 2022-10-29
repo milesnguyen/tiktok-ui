@@ -9,7 +9,6 @@ import Tippy from '@tippyjs/react/headless';
 import Image from '../Image';
 import AccountPreview from './AccountPreview/AccountPreview';
 import styles from './SuggestAccounts.module.scss';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const cx = classNames.bind(styles);
 

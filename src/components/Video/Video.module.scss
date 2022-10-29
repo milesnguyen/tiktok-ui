@@ -14,16 +14,20 @@
     height: 56px;
     border-radius: 50%;
 }
-.info {
-}
+
 .user {
     display: flex;
     line-height: 2.5rem;
+    cursor: pointer;
 }
 .nickname {
     font-size: 1.8rem;
     font-weight: 700;
     margin-right: 4px;
+
+    &:hover {
+        text-decoration: underline 1.5px #161823;
+    }
 }
 .name {
     font-weight: 400;
@@ -63,7 +67,6 @@
 .play-video {
     width: 100%;
     height: calc(450px + (100vw - 768px) / 1152 * 100);
-    margin-right: 20px;
     border-radius: 6px;
     object-fit: cover;
 }
@@ -84,4 +87,31 @@
 .btn {
     position: absolute;
     left: 664px;
+}
+.action {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+// Control Video
+
+.item-video {
+    position: relative;
+    margin-right: 20px;
+
+    &:hover .control {
+        display: block;
+    }
+}
+.control {
+    display: none;
+    position: absolute;
+    color: var(--white);
+    bottom: 34px;
+    left: 32px;
+    font-size: 1.6rem;
+    transition: all 0.5s linear;
 }
