@@ -10,6 +10,12 @@ function Home({ data }) {
     const [videos, setVideos] = useState([]);
     const [page, setPage] = useState(1);
 
+    function handleScroll() {
+        if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+            setPage((page) => page + 1);
+        }
+    }
+
     useEffect(() => {
         const fetchApi = async () => {
             const data = await videoServices.loadVideo('for-you', page);

@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import Hastag from 'src/components/Hastag';
 import {
     HomeIcon,
     HomeSolidIcon,
@@ -73,7 +74,17 @@ function Sidebar() {
                 </div>
             )}
 
-            <SuggestAccount label="Các tài khoản đang follow" />
+            <SuggestAccount label="Các tài khoản đang follow" data={aacSuggest} />
+            {seeAll ? (
+                <div className={cx('more-btn')} onClick={() => setSeeAll(false)}>
+                    Ẩn bớt
+                </div>
+            ) : (
+                <div className={cx('more-btn')} onClick={() => setSeeAll(true)}>
+                    Xem tất cả
+                </div>
+            )}
+            <Hastag />
         </aside>
     );
 }

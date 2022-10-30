@@ -1,0 +1,27 @@
+.wrapper {
+    padding: 16px 0px;
+}
+.header {
+}
+.tag {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.link {
+    display: flex;
+    padding: 3px 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    margin: 0 8px 12px 0;
+    max-width: 348px;
+}
+.tag-text {
+    line-height: 1.6rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    color: #161823bf;
+    padding-left: 6px;
+}

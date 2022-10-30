@@ -1,8 +1,18 @@
 .wrapper {
+    overflow: hidden;
+    padding-right: 12px;
+    top: 62px;
+    left: 205px;
+    bottom: 0;
     width: 356px;
-    margin-left: -18px;
-    padding: 20px 0 26px 8px;
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    z-index: 99;
+    padding-right: 8px;
 
+    &:hover {
+        overflow-y: scroll;
+    }
     nav {
         margin-bottom: 8px;
     }

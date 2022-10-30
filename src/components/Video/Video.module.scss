@@ -3,6 +3,7 @@
     display: flex;
     position: relative;
     border-bottom: 0.5px solid #1618231f;
+    margin-left: 356px;
 }
 .container {
     margin-left: 12px;
@@ -31,6 +32,7 @@
 }
 .name {
     font-weight: 400;
+    line-height: 2.8rem;
     font-size: 1.4rem;
 }
 .description {
@@ -105,6 +107,9 @@
     &:hover .control {
         display: block;
     }
+    &:hover .mute {
+        display: block;
+    }
 }
 .control {
     display: none;
@@ -112,6 +117,53 @@
     color: var(--white);
     bottom: 34px;
     left: 32px;
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     transition: all 0.5s linear;
+}
+.volume {
+    position: absolute;
+    bottom: 22px;
+    right: 4px;
+
+    &:hover .volume-control {
+        display: block;
+    }
+}
+.mute {
+    display: none;
+    padding: 10px;
+}
+.volume-control {
+    position: absolute;
+    bottom: 48px;
+    right: 12px;
+    width: 24px;
+    height: 64px;
+    border-radius: 16px;
+    background-color: #16182357;
+    // z-index: 2;
+    display: none;
+}
+.volume-range {
+    -webkit-appearance: none;
+    background-color: #fff;
+    border-radius: 4px;
+    bottom: 30px;
+    height: 2px;
+    position: absolute;
+    right: -11px;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    width: 46px;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    &::-webkit-slider-runnable-track {
+    }
 }

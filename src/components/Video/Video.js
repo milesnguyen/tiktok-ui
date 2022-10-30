@@ -12,16 +12,23 @@ import styles from './Video.module.scss';
 import { Wrapper as PopperWrapper } from 'src/components/Popper';
 import VideoPreview from './VideoPreview/VideoPreview';
 import ShareAction from '../ShareAction/ShareAction';
+import { MuteIcon, VolumeIcon } from '../Icons';
 
 const cx = classNames.bind(styles);
 
 function Video({ data }) {
     const videosRef = useRef();
+    const [volume, setVolume] = useState(30);
+
     const [isPlaying, setIsPlaying] = useState(false);
+    const [mute, setMute] = useState(false);
 
     useEffect(() => {
         window.addEventListener('scroll', playVideoInViewport);
         return () => window.removeEventListener('scroll', playVideoInViewport);
+    });
+    useEffect(() => {
+        videosRef.current.mute = mute;
     });
 
     function playVideoInViewport() {
@@ -51,7 +58,9 @@ function Video({ data }) {
             setIsPlaying(false);
         }
     };
-
+    const handleAdjustVolume = (e) => {
+        videosRef.current.volume = e.target.value / 100;
+    };
     const renderPreview = (props) => {
         return (
             <div className={cx('preview')} tabIndex="-1" {...props}>
@@ -100,7 +109,13 @@ function Video({ data }) {
                 <div className={cx('body')}>
                     <div className={cx('item')}>
                         <div className={cx('item-video')}>
-                            <video className={cx('play-video')} type="video/mp4" src={data.file_url} ref={videosRef} />
+                            <video
+                                className={cx('play-video')}
+                                muted={mute}
+                                type="video/mp4"
+                                src={data.file_url}
+                                ref={videosRef}
+                            />
                             <div className={cx('control')}>
                                 {isPlaying ? (
                                     <div className={cx('pause')} onClick={handlePause}>
@@ -113,7 +128,21 @@ function Video({ data }) {
                                 )}
                             </div>
                             <div className={cx('volume')}>
-                                <input type="range" min="0" max="100" step="1" orient="vertical" />
+                                <div className={cx('mute')} onClick={() => setMute(!mute)}>
+                                    {!mute ? <VolumeIcon /> : <MuteIcon />}
+                                </div>
+
+                                <div className={cx('volume-control')}>
+                                    <input
+                                        className={cx('volume-range')}
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        step="1"
+                                        orient="vertical"
+                                        onChange={handleAdjustVolume}
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div className={cx('item-react')}>
