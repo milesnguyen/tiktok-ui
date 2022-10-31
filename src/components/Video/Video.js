@@ -13,12 +13,14 @@ import { Wrapper as PopperWrapper } from 'src/components/Popper';
 import VideoPreview from './VideoPreview/VideoPreview';
 import ShareAction from '../ShareAction/ShareAction';
 import { MuteIcon, VolumeIcon } from '../Icons';
+import Skeleton from 'react-loading-skeleton';
 
 const cx = classNames.bind(styles);
 
 function Video({ data }) {
     const videosRef = useRef();
     const [volume, setVolume] = useState(30);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [isPlaying, setIsPlaying] = useState(false);
     const [mute, setMute] = useState(false);
@@ -105,6 +107,9 @@ function Video({ data }) {
                             </div>
                         </div>
                     </div>
+                    <Button outline className={cx('btn')}>
+                        Follow
+                    </Button>
                 </header>
                 <div className={cx('body')}>
                     <div className={cx('item')}>
@@ -171,9 +176,6 @@ function Video({ data }) {
                     </div>
                 </div>
             </div>
-            <Button outline className={cx('btn')}>
-                Follow
-            </Button>
         </div>
     );
 }

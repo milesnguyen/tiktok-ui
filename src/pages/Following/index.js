@@ -1,5 +1,7 @@
+import Skeletons from 'src/components/Skeletons';
+
 function Following() {
-    return <h2>Following Page</h2>;
+    return <Skeletons />;
 }
 
 export default Following;

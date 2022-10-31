@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import Footer from 'src/components/Footer';
 import Hastag from 'src/components/Hastag';
 import {
     HomeIcon,
@@ -22,6 +23,7 @@ function Sidebar() {
     const [aacSuggest, setAccSuggest] = useState([]);
     const [seeAll, setSeeAll] = useState(false);
     const [page, setPage] = useState();
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const fetchAPI = async () => {
@@ -63,7 +65,19 @@ function Sidebar() {
                     activeIcon={<LiveCamSolidIcon />}
                 />
             </Menu>
-            <SuggestAccount label="Tài khoản được đề xuất" data={aacSuggest} />
+
+            {!isLoading ? (
+                <div style={{ display: 'flex' }} className={cx('skitem')}>
+                    <Skeleton circle width={32} height={32} />
+                    <div className={cx('skeleton')}>
+                        <Skeleton width={107} height={12} borderRadius={8} />
+                        <Skeleton width={66} height={12} borderRadius={8} />
+                    </div>
+                </div>
+            ) : (
+                <SuggestAccount label="Tài khoản được đề xuất" data={aacSuggest} />
+            )}
+
             {seeAll ? (
                 <div className={cx('more-btn')} onClick={() => setSeeAll(false)}>
                     Ẩn bớt
@@ -74,7 +88,17 @@ function Sidebar() {
                 </div>
             )}
 
-            <SuggestAccount label="Các tài khoản đang follow" data={aacSuggest} />
+            {!isLoading ? (
+                <div style={{ display: 'flex' }} className={cx('skitem')}>
+                    <Skeleton circle width={32} height={32} />
+                    <div className={cx('skeleton')}>
+                        <Skeleton width={107} height={12} borderRadius={8} />
+                        <Skeleton width={66} height={12} borderRadius={8} />
+                    </div>
+                </div>
+            ) : (
+                <SuggestAccount label="Tài khoản được đề xuất" data={aacSuggest} />
+            )}
             {seeAll ? (
                 <div className={cx('more-btn')} onClick={() => setSeeAll(false)}>
                     Ẩn bớt
@@ -85,6 +109,7 @@ function Sidebar() {
                 </div>
             )}
             <Hastag />
+            <Footer />
         </aside>
     );
 }

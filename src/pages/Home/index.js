@@ -1,8 +1,9 @@
-import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
-import Video from 'src/components/Video';
 import { useEffect, useState } from 'react';
+import 'react-loading-skeleton/dist/skeleton.css';
+import Video from 'src/components/Video';
 import * as videoServices from 'src/services/videoServices';
+import styles from './Home.module.scss';
 
 const cx = classNames.bind(styles);
 

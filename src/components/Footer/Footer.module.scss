@@ -1,0 +1,24 @@
+.wrapper {
+    border-top: 0.5px solid rgba(22, 24, 35, 0.1215686275);
+    padding-top: 16px;
+    padding-left: 8px;
+}
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    padding: 0px 0;
+}
+.navlink {
+    line-height: 1.7rem;
+    color: #16182380;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    margin-right: 6px;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

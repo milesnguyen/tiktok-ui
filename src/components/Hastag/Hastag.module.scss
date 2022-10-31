@@ -1,7 +1,12 @@
 .wrapper {
     padding: 16px 0px;
+    border-top: 0.5px solid rgba(22, 24, 35, 0.1215686275);
 }
 .header {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #161823bf;
+    padding-bottom: 16px;
 }
 .tag {
     display: flex;
@@ -10,11 +15,20 @@
 }
 .link {
     display: flex;
+    align-items: center;
     padding: 3px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #16182333;
     border-radius: 12px;
     margin: 0 8px 12px 0;
-    max-width: 348px;
+    max-width: 324px;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+}
+.icon {
+    line-height: 1.6rem;
 }
 .tag-text {
     line-height: 1.6rem;
