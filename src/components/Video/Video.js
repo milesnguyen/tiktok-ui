@@ -12,8 +12,9 @@ import styles from './Video.module.scss';
 import { Wrapper as PopperWrapper } from 'src/components/Popper';
 import VideoPreview from './VideoPreview/VideoPreview';
 import ShareAction from '../ShareAction/ShareAction';
-import { MuteIcon, VolumeIcon } from '../Icons';
+import { FlagIcon, MuteIcon, VolumeIcon } from '../Icons';
 import Skeleton from 'react-loading-skeleton';
+import { faFlag } from '@fortawesome/free-regular-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -62,6 +63,9 @@ function Video({ data }) {
     };
     const handleAdjustVolume = (e) => {
         videosRef.current.volume = e.target.value / 100;
+        {
+            volume = 0 ? <MuteIcon /> : <VolumeIcon />;
+        }
     };
     const renderPreview = (props) => {
         return (
@@ -95,10 +99,10 @@ function Video({ data }) {
                         <div className={cx('description')}>
                             <p className={cx('text')}>{data.description}</p>
                             <div className={cx('hastag')}>
-                                <strong>#fyp</strong>
-                                <strong>#ChangMie</strong>
-                                <strong>#mackedoi</strong>
-                                <strong>#suthatla</strong>
+                                <strong>#miles</strong>
+                                <strong>#miles</strong>
+                                <strong>#miles</strong>
+                                <strong>#miles</strong>
                             </div>
 
                             <div className={cx('audio')}>
@@ -107,6 +111,7 @@ function Video({ data }) {
                             </div>
                         </div>
                     </div>
+
                     <Button outline className={cx('btn')}>
                         Follow
                     </Button>
@@ -121,6 +126,10 @@ function Video({ data }) {
                                 src={data.file_url}
                                 ref={videosRef}
                             />
+                            <div className={cx('report')}>
+                                <FontAwesomeIcon className={cx('icon')} icon={faFlag} />
+                                <span>Báo cáo</span>
+                            </div>
                             <div className={cx('control')}>
                                 {isPlaying ? (
                                     <div className={cx('pause')} onClick={handlePause}>
@@ -153,15 +162,23 @@ function Video({ data }) {
                         <div className={cx('item-react')}>
                             <div className={cx('action')}>
                                 <Button circle>
-                                    <FontAwesomeIcon className={cx('react-icon')} icon={faHeart} />
+                                    {!data.is_liked ? (
+                                        <FontAwesomeIcon className={cx('react-icon')} icon={faHeart} />
+                                    ) : (
+                                        <FontAwesomeIcon
+                                            className={cx('react-icon')}
+                                            icon={faHeart}
+                                            style={{ color: 'var(--primary)' }}
+                                        />
+                                    )}
                                 </Button>
-                                <span className={cx('count')}>24.1k</span>
+                                <span className={cx('count')}>{data.likes_count}</span>
                             </div>
                             <div className={cx('action')}>
                                 <Button circle>
                                     <FontAwesomeIcon className={cx('react-icon')} icon={faCommentDots} />
                                 </Button>
-                                <span className={cx('count')}>24.1k</span>
+                                <span className={cx('count')}>{data.comments_count}</span>
                             </div>
 
                             <ShareAction>
@@ -169,7 +186,7 @@ function Video({ data }) {
                                     <Button circle>
                                         <FontAwesomeIcon className={cx('react-icon')} icon={faShare} />
                                     </Button>
-                                    <span className={cx('count')}>24.1k</span>
+                                    <span className={cx('count')}>{data.shares_count}</span>
                                 </div>
                             </ShareAction>
                         </div>

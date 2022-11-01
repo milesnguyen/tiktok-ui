@@ -23,13 +23,14 @@ function Sidebar() {
     const [aacSuggest, setAccSuggest] = useState([]);
     const [seeAll, setSeeAll] = useState(false);
     const [page, setPage] = useState();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchAPI = async () => {
             if (!seeAll) {
                 const result = await suggestServices.suggest(1, 5);
                 setAccSuggest(result);
+                setIsLoading(false);
             } else {
                 const result = await suggestServices.suggest(1, 16);
                 setAccSuggest(result);
@@ -65,30 +66,7 @@ function Sidebar() {
                     activeIcon={<LiveCamSolidIcon />}
                 />
             </Menu>
-
-            {!isLoading ? (
-                <div style={{ display: 'flex' }} className={cx('skitem')}>
-                    <Skeleton circle width={32} height={32} />
-                    <div className={cx('skeleton')}>
-                        <Skeleton width={107} height={12} borderRadius={8} />
-                        <Skeleton width={66} height={12} borderRadius={8} />
-                    </div>
-                </div>
-            ) : (
-                <SuggestAccount label="Tài khoản được đề xuất" data={aacSuggest} />
-            )}
-
-            {seeAll ? (
-                <div className={cx('more-btn')} onClick={() => setSeeAll(false)}>
-                    Ẩn bớt
-                </div>
-            ) : (
-                <div className={cx('more-btn')} onClick={() => setSeeAll(true)}>
-                    Xem tất cả
-                </div>
-            )}
-
-            {!isLoading ? (
+            {isLoading ? (
                 <div style={{ display: 'flex' }} className={cx('skitem')}>
                     <Skeleton circle width={32} height={32} />
                     <div className={cx('skeleton')}>
@@ -108,6 +86,18 @@ function Sidebar() {
                     Xem tất cả
                 </div>
             )}
+            {isLoading ? (
+                <div style={{ display: 'flex' }} className={cx('skitem')}>
+                    <Skeleton circle width={32} height={32} />
+                    <div className={cx('skeleton')}>
+                        <Skeleton width={107} height={12} borderRadius={8} />
+                        <Skeleton width={66} height={12} borderRadius={8} />
+                    </div>
+                </div>
+            ) : (
+                <SuggestAccount label="Các tài khoản đang follow" data={aacSuggest} />
+            )}
+
             <Hastag />
             <Footer />
         </aside>

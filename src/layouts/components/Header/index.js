@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { faEllipsisVertical, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/';
@@ -12,6 +13,8 @@ import Menu from 'src/components/Popper/Menu';
 import styles from './Header.module.scss';
 import Search from '../Search';
 import config from 'src/config';
+import Modals from 'src/components/Modals';
+
 import {
     BoxIcon,
     CoinIcon,
@@ -65,6 +68,7 @@ const MENU_ITEMS = [
 
 function Header() {
     const currentUser = true;
+    const [openModal, setOpenModal] = useState(false);
 
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -120,7 +124,7 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Button upload>
+                            <Button upload onClick={() => setOpenModal(true)}>
                                 <FontAwesomeIcon icon={faPlus} /> Tải lên
                             </Button>
                             <Tippy content="Tin nhắn" placement="bottom">
@@ -156,6 +160,7 @@ function Header() {
                     </Menu>
                 </div>
             </div>
+            {openModal && <Modals setOpenModal={setOpenModal} />}
         </header>
     );
 }
