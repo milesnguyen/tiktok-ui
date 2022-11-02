@@ -1,0 +1,72 @@
+.wrapper {
+    width: 100%;
+    padding: 32px 24px;
+}
+.inner {
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+.card {
+    display: flex;
+}
+.avatar {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.name {
+    font-weight: 600;
+
+    p {
+        font-size: 3.2rem;
+        line-height: 4rem;
+        padding-bottom: 2px;
+    }
+
+    span {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+    }
+
+    .btn {
+        margin-top: 16px;
+        width: 208px;
+        height: 36px;
+    }
+}
+.action {
+    .icon {
+        margin: 8px;
+    }
+}
+.count {
+    margin-top: 22px;
+
+    .countInfo {
+        display: flex;
+
+        p {
+            font-weight: 700;
+        }
+        span {
+            margin-left: 6px;
+            margin-right: 20px;
+        }
+    }
+    .bio {
+        font-size: 1.6rem;
+        font-weight: 2rem;
+        margin-top: 10px;
+    }
+    .web {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+}

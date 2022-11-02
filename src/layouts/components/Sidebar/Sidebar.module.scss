@@ -16,6 +16,9 @@
     nav {
         margin-bottom: 8px;
     }
+    &.shrink {
+        left: 0;
+    }
 }
 .more-btn {
     color: var(--primary);

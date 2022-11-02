@@ -66,7 +66,7 @@ const MENU_ITEMS = [
     },
 ];
 
-function Header() {
+function Header({ stretch }) {
     const currentUser = true;
     const [openModal, setOpenModal] = useState(false);
 
@@ -111,7 +111,7 @@ function Header() {
 
     return (
         <header className={cx('wrapper')}>
-            <div className={cx('inner')}>
+            <div className={cx('inner', { stretch: stretch })}>
                 <div className={cx('logo')}>
                     <Link to={config.routes.home} className={cx('logo-link')}>
                         <img src={images.logo} alt="tiktok" />

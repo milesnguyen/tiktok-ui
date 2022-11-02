@@ -19,7 +19,7 @@ import styles from './Sidebar.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Sidebar() {
+function Sidebar({ shrink }) {
     const [aacSuggest, setAccSuggest] = useState([]);
     const [seeAll, setSeeAll] = useState(false);
     const [page, setPage] = useState();
@@ -45,7 +45,7 @@ function Sidebar() {
     // };
 
     return (
-        <aside className={cx('wrapper')}>
+        <aside className={cx('wrapper', { shrink })}>
             <Menu>
                 <MenuItem
                     title="Dành cho bạn"

@@ -1,8 +1,7 @@
-import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
+import { Wrapper as PopperWrapper } from 'src/components/Popper';
 import {
     ArrowBottomIcon,
     CoppyIcon,
@@ -11,15 +10,14 @@ import {
     FacebookIcon,
     LineIcon,
     LinkedInIcon,
-    RedditIcon,
     PinterestIcon,
+    RedditIcon,
     ShareFrIcon,
     TelegramIcon,
     TwitterIcon,
     WhatsAppIcon,
 } from '../Icons';
 import styles from './ShareAction.module.scss';
-import { Wrapper as PopperWrapper } from 'src/components/Popper';
 
 const cx = classNames.bind(styles);
 
