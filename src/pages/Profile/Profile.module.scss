@@ -6,6 +6,7 @@
 }
 .info {
     display: flex;
+    width: 670px;
     justify-content: space-between;
 }
 .card {
@@ -45,6 +46,7 @@
 }
 .count {
     margin-top: 22px;
+    margin-bottom: 20px;
 
     .countInfo {
         display: flex;
@@ -69,4 +71,49 @@
         font-size: 1.6rem;
         font-weight: 700;
     }
+}
+
+
+// Video
+
+.main {
+    position: relative;
+    
+}
+.head {
+    display: flex;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        width: 230px;
+        height: 44px;
+    }
+    
+    
+    
+}
+.video-tab {
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+.like-tab {
+    color: #16182380;
+    &:hover ~ .slide{
+        transform: translateX(230px);
+    }
+}
+.slide {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 230px;
+    height: 2px;
+    background-color: black;
+    transition: transform .3s;
 }

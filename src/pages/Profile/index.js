@@ -1,9 +1,12 @@
+import axios from 'axios';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Button from 'src/components/Button';
-import { MenuIcon, ShareIcon, WebIcon } from 'src/components/Icons';
+import { LockIcon, MenuIcon, ShareIcon, WebIcon } from 'src/components/Icons';
 import Image from 'src/components/Image';
+import Video from 'src/components/Video';
+import VideoPreview from 'src/components/VideoPreview';
 
 import styles from './Profile.module.scss';
 
@@ -16,10 +19,10 @@ function Profile() {
     const [profiles, setProfiles] = useState([]);
 
     useEffect(() => {
-        fetch(`https://tiktok.fullstack.edu.vn/api/users${data}`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/@${data.slice(2)}`)
             .then((response) => response.json())
             .then((json) => setProfiles(json.data));
-    }, [data]);
+    }, [data.slice(2)]);
 
     return (
         <div className={cx('wrapper')}>
@@ -56,6 +59,21 @@ function Profile() {
                             {profiles.website_url}
                         </a>
                     </div>
+                </div>
+                <div className={cx('main')}>
+                    <div className={cx('head')}>
+                        <span className={cx('video-tab')}>Nội dung</span>
+                        <span className={cx('like-tab')}>
+                            <LockIcon /> Đã thích
+                        </span>
+                        <div className={cx('slide')}></div>
+                    </div>
+                </div>
+
+                <div className={cx('videos')}>
+                    {[profiles].map((video, index) => {
+                        return <VideoPreview data={video} key={index} />;
+                    })}
                 </div>
             </div>
         </div>
