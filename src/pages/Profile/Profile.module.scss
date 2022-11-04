@@ -73,16 +73,14 @@
     }
 }
 
-
 // Video
 
 .main {
     position: relative;
-    
 }
 .head {
     display: flex;
-
+    margin-bottom: 8px;
     span {
         display: flex;
         justify-content: center;
@@ -92,19 +90,15 @@
         width: 230px;
         height: 44px;
     }
-    
-    
-    
 }
 .video-tab {
-
     &:hover {
         cursor: pointer;
     }
 }
 .like-tab {
     color: #16182380;
-    &:hover ~ .slide{
+    &:hover ~ .slide {
         transform: translateX(230px);
     }
 }
@@ -115,5 +109,15 @@
     width: 230px;
     height: 2px;
     background-color: black;
-    transition: transform .3s;
+    transition: transform 0.3s;
+}
+.skitem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.skeleton {
+    .skname {
+        margin-left: 14px;
+    }
 }

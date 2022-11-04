@@ -20,7 +20,8 @@
     border: 1px solid #16182333;
     border-radius: 12px;
     margin: 0 8px 12px 0;
-    max-width: 324px;
+    width: 324;
+    max-width: 100%;
 
     &:hover {
         background: rgba(22, 24, 35, 0.03);
