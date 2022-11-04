@@ -5,12 +5,13 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Button from 'src/components/Button';
 import Image from 'src/components/Image';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function AccountPreview({ data }) {
     return (
-        <div className={cx('wrapper')}>
+        <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
             <div className={cx('item-head')}>
                 <Image className={cx('avatar')} src={data.avatar} alt="" />
                 <Button primary className={cx('follow-btn')}>
@@ -30,7 +31,7 @@ function AccountPreview({ data }) {
                 <span className={cx('follow')}>{data.likes_count}</span>
                 <span className={cx('text')}>Thích</span>
             </footer>
-        </div>
+        </Link>
     );
 }
 AccountPreview.propTypes = {

@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import Skeleton from 'react-loading-skeleton';
 import Footer from 'src/components/Footer';
 import Hastag from 'src/components/Hastag';
 import {

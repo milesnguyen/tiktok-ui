@@ -6,11 +6,11 @@ import { Wrapper as PopperWrapper } from 'src/components/Popper';
 
 import Tippy from '@tippyjs/react/headless';
 
+import 'react-loading-skeleton/dist/skeleton.css';
+import { Link } from 'react-router-dom';
 import Image from '../Image';
 import AccountPreview from './AccountPreview/AccountPreview';
 import styles from './SuggestAccounts.module.scss';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
 
 const cx = classNames.bind(styles);
 
@@ -27,8 +27,16 @@ function Accountitem({ data }) {
 
     return (
         <div>
-            <Tippy interactive delay={[800, 0]} render={renderPreview} placement="bottom">
-                <div className={cx('account-item')}>
+            <Tippy
+                appendTo={document.body}
+                hideOnClick="false"
+                zIndex={[99]}
+                interactive
+                delay={[800, 0]}
+                render={renderPreview}
+                placement="bottom"
+            >
+                <Link to={`/@${data.nickname}`} className={cx('account-item')}>
                     <Image className={cx('avatar')} src={data.avatar} alt={data.nickname} />
                     <div className={cx('item-info')}>
                         <p className={cx('nickname')}>
@@ -37,7 +45,7 @@ function Accountitem({ data }) {
                         </p>
                         <p className={cx('name')}>{`${data.first_name} ${data.last_name}`}</p>
                     </div>
-                </div>
+                </Link>
             </Tippy>
         </div>
     );
