@@ -125,6 +125,7 @@ function Video({ data }) {
                                 type="video/mp4"
                                 src={data.file_url}
                                 ref={videosRef}
+                                loop
                             />
                             <div className={cx('report')}>
                                 <FontAwesomeIcon className={cx('icon')} icon={faFlag} />
