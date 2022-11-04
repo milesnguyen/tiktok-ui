@@ -58,7 +58,7 @@ function Modals({ setOpenModal }) {
 
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('content')}>
+            {/* <div className={cx('content')}>
                 <div className={cx('item')}>
                     <div className={cx('list')}>
                         <h2 className={cx('head')}>Đăng nhập vào TikTok</h2>
@@ -80,7 +80,7 @@ function Modals({ setOpenModal }) {
                 <div className={cx('btn')} onClick={() => setOpenModal(false)}>
                     <Xicon />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

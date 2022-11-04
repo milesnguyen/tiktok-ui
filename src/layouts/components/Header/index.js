@@ -1,19 +1,19 @@
-import { useState } from 'react';
 import { faEllipsisVertical, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/';
 import classNames from 'classnames/bind';
-import 'tippy.js/dist/tippy.css'; // optional
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import 'tippy.js/dist/tippy.css'; // optional
 
 import images from 'src/assets/images';
 import Button from 'src/components/Button';
 import Image from 'src/components/Image';
-import Menu from 'src/components/Popper/Menu';
-import styles from './Header.module.scss';
-import Search from '../Search';
-import config from 'src/config';
 import Modals from 'src/components/Modals';
+import Menu from 'src/components/Popper/Menu';
+import config from 'src/config';
+import Search from '../Search';
+import styles from './Header.module.scss';
 
 import {
     BoxIcon,
@@ -67,7 +67,7 @@ const MENU_ITEMS = [
 ];
 
 function Header({ stretch }) {
-    const currentUser = true;
+    const currentUser = false;
     const [openModal, setOpenModal] = useState(false);
 
     const handleMenuChange = (menuItem) => {
@@ -124,7 +124,7 @@ function Header({ stretch }) {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Button upload onClick={() => setOpenModal(true)}>
+                            <Button upload>
                                 <FontAwesomeIcon icon={faPlus} /> Tải lên
                             </Button>
                             <Tippy content="Tin nhắn" placement="bottom">

@@ -14,10 +14,15 @@
 .info {
     width: 510px;
 }
-.avatar {
+.avt {
     width: 56px;
     height: 56px;
-    border-radius: 50%;
+    .circle {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 }
 
 .user {
@@ -166,7 +171,6 @@
     height: 64px;
     border-radius: 16px;
     background-color: #16182357;
-    // z-index: 2;
     display: none;
 }
 .volume-range {

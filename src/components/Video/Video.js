@@ -79,7 +79,9 @@ function Video({ data }) {
 
     return (
         <div className={cx('wrapper')}>
-            <Image className={cx('avatar')} src={data.user.avatar} alt={data.user.nickname} />
+            <div className={cx('avt')}>
+                <Image className={cx('circle')} src={data.user.avatar} alt={data.user.nickname} />
+            </div>
             <div className={cx('container')}>
                 <header className={cx('head')}>
                     <div className={cx('info')}>

@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
+import Button from 'src/components/Button';
 import Footer from 'src/components/Footer';
 import Hastag from 'src/components/Hastag';
 import {
@@ -11,6 +12,7 @@ import {
     UsergrIcon,
     UsergrSolidIcon,
 } from 'src/components/Icons';
+import Modals from 'src/components/Modals';
 import SuggestAccount from 'src/components/SuggestAccount';
 import config from 'src/config';
 import * as suggestServices from 'src/services/suggestServices';
@@ -45,7 +47,7 @@ function Sidebar({ shrink }) {
     // };
 
     return (
-        <aside className={cx('wrapper', { shrink })}>
+        <div className={cx('wrapper', { shrink })}>
             <Menu>
                 <MenuItem
                     title="Dành cho bạn"
@@ -66,6 +68,14 @@ function Sidebar({ shrink }) {
                     activeIcon={<LiveCamSolidIcon />}
                 />
             </Menu>
+
+            <div className={cx('btn-login')}>
+                <p>Đăng nhập để follow các tác giả, thích video và xem bình luận.</p>
+                <Button outline large>
+                    Đăng Nhập
+                </Button>
+            </div>
+
             {isLoading ? (
                 <div style={{ display: 'flex' }} className={cx('skitem')}>
                     <Skeleton circle width={32} height={32} />
@@ -100,7 +110,7 @@ function Sidebar({ shrink }) {
 
             <Hastag />
             <Footer />
-        </aside>
+        </div>
     );
 }
 

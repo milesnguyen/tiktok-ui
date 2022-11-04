@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import Header from 'src/layouts/components/Header';
 import styles from './DefaultLayout.module.scss';
 import Sidebar from '../components/Sidebar';
+import { useContext } from 'react';
 
 const cx = classNames.bind(styles);
 
