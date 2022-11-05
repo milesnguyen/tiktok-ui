@@ -7,7 +7,7 @@
     width: 356px;
     background: rgba(255, 255, 255, 1);
     position: fixed;
-    padding: 20px 0 26px 8px;
+    padding: 20px 10px 26px 8px;
     // display: none;
 
     &:hover {
@@ -34,7 +34,7 @@
 
 .btn-login {
     border-top: 0.5px solid rgba(22, 24, 35, 0.1215686275);
-    padding: 20px 8px 24px 8px;
+    padding: 20px 10px 24px 8px;
 
     p {
         font-size: 1.6rem;
@@ -42,6 +42,12 @@
         color: #16182380;
     }
     button {
+        min-width: 208px;
+        width: 324px;
         margin-top: 20px;
+
+        &.shrink {
+            max-width: 208px;
+        }
     }
 }

@@ -9,7 +9,6 @@ import 'tippy.js/dist/tippy.css'; // optional
 import images from 'src/assets/images';
 import Button from 'src/components/Button';
 import Image from 'src/components/Image';
-import Modals from 'src/components/Modals';
 import Menu from 'src/components/Popper/Menu';
 import config from 'src/config';
 import Search from '../Search';
@@ -124,26 +123,33 @@ function Header({ stretch }) {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Button upload>
-                                <FontAwesomeIcon icon={faPlus} /> Tải lên
-                            </Button>
-                            <Tippy content="Tin nhắn" placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <MessIcon />
-                                </button>
-                            </Tippy>
-                            <Tippy placement="bottom" content="Hộp thư">
-                                <button className={cx('action-btn')}>
-                                    <BoxIcon />
-                                </button>
-                            </Tippy>
+                            <Link to={config.routes.login}>
+                                <Button upload>
+                                    <FontAwesomeIcon icon={faPlus} /> Tải lên
+                                </Button>
+                                <Tippy content="Tin nhắn" placement="bottom">
+                                    <button className={cx('action-btn')}>
+                                        <MessIcon />
+                                    </button>
+                                </Tippy>
+                                <Tippy placement="bottom" content="Hộp thư">
+                                    <button className={cx('action-btn')}>
+                                        <BoxIcon />
+                                    </button>
+                                </Tippy>
+                            </Link>
                         </>
                     ) : (
                         <>
-                            <Button upload>
-                                <FontAwesomeIcon icon={faPlus} /> Tải lên
-                            </Button>
-                            <Button primary>Đăng nhập</Button>
+                            <Link to={config.routes.login}>
+                                <Button upload>
+                                    <FontAwesomeIcon icon={faPlus} /> Tải lên
+                                </Button>
+                            </Link>
+
+                            <Link to={config.routes.login} style={{ marginLeft: 16 }}>
+                                <Button primary>Đăng nhập</Button>
+                            </Link>
                         </>
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
@@ -160,7 +166,6 @@ function Header({ stretch }) {
                     </Menu>
                 </div>
             </div>
-            {openModal && <Modals setOpenModal={setOpenModal} />}
         </header>
     );
 }
