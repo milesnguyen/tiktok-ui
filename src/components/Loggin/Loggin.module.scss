@@ -5,26 +5,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-    background: rgb(6, 250, 252);
-    background: linear-gradient(47deg, rgba(6, 250, 252, 1) 0%, rgba(112, 143, 189, 1) 35%, rgba(238, 17, 112, 1) 100%);
+    margin-top: 40px;
+    background-color: #e8edf9;
 }
 .content {
-    width: 500px;
-    padding: 16px;
     border-radius: 10px;
     background-color: var(--white);
-    border: 5px solid rgba(0, 0, 0, 0.162);
 
     h2 {
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         font-size: 2.6rem;
         line-height: 2.2rem;
         margin-bottom: 12px;
+        background-color: var(--primary);
+        color: var(--white);
+        font-weight: 700;
+    }
+}
+.login-img {
+    text-align: center;
+    img {
+        width: 300px;
+        height: 300px;
     }
 }
 .item {
+    padding: 16px;
+
     button {
+        width: auto;
         display: flex;
         justify-content: center;
         margin: 20px 70px;
